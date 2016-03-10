@@ -59,9 +59,9 @@ $app->apiKey = getenv('API_KEY');
 
 // If a sessionId has already been created, retrieve it from the storage
 $app->container->singleton('sessionId', function() use ($app) {
-    if ($app->storage->exists('sessionId')) {
-        return $app->storage->retrieve('sessionId');
-    }
+    // if ($app->storage->exists('sessionId')) {
+    //     return $app->storage->retrieve('sessionId');
+    // }
 
     $session = $app->opentok->createSession(array(
         'mediaMode' => MediaMode::ROUTED
